@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rip Current Detection</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rip Current Detection</h1>
+        
+        <div class="upload-container">
+            <h2>Upload Image</h2>
+            
+            <div class="upload-methods">
+                <div class="upload-method">
+                    <h3>Option 1: Upload File</h3>
+                    <div class="file-input">
+                        <input type="file" id="fileInput" accept="image/*">
+                        <label for="fileInput" class="btn">Select Image</label>
+                    </div>
+                </div>
+                
+                <div class="upload-method">
+                    <h3>Option 2: Use Camera</h3>
+                    <button id="openCameraBtn" class="btn">Open Camera</button>
+                    <div class="camera-container" id="cameraContainer">
+                        <video id="cameraFeed" autoplay playsinline></video>
+                        <button id="captureCameraBtn" class="btn">Capture</button>
+                        <button id="closeCameraBtn" class="btn">Close Camera</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview-container">
+                <h3>Image Preview</h3>
+                <div class="image-preview">
+                    <img id="imagePreview" alt="Preview">
+                </div>
+                <button id="processImageBtn" class="btn primary-btn" disabled>Detect Rip Currents</button>
+            </div>
+        </div>
+        
+        <div class="results-container" id="resultsContainer">
+            <h2>Detection Results</h2>
+            
+            <div class="confidence-filter">
+                <label for="confidenceSlider">Display Confidence Threshold: <span id="confidenceValue">5</span>%</label>
+                <input type="range" id="confidenceSlider" min="1" max="95" value="5" step="1">
+                <div class="confidence-tip">
+                    <p>Lower values show more potential rip currents but may include false detections</p>
+                    <p>Adjust the slider to filter results - values below 15% may detect very subtle rip currents</p>
+                </div>
+            </div>
+            
+            <div class="results-content">
+                <div class="result-image-container">
+                    <h3>Detected Image</h3>
+                    <canvas id="resultCanvas"></canvas>
+                </div>
+                <div class="result-info">
+                    <h3>Detected Rip Currents</h3>
+                    <div id="detectionInfo"></div>
+                </div>
+            </div>
+
+            <div class="legend">
+                <h3>Detection Confidence Legend</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="color-box high-confidence"></div>
+                        <span>High Confidence (70-100%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="color-box medium-confidence"></div>
+                        <span>Medium Confidence (30-70%)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="color-box low-confidence"></div>
+                        <span>Low Confidence (5-30%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <p>Processing image...</p>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
