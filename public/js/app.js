@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Camera functionality
+    // Camera functionality block
     openCameraBtn.addEventListener('click', async () => {
         try {
             stream = await navigator.mediaDevices.getUserMedia({ 
