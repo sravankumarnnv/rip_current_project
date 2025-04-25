@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 10px;
@@ -146,26 +146,20 @@ video {
 
 .results-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
-.result-image-container, .result-info {
-    flex: 1;
-    min-width: 300px;
+.result-image-container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
 }
 
 canvas {
     max-width: 100%;
     border: 1px solid #ddd;
     border-radius: 8px;
-}
-
-#detectionInfo {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    min-height: 200px;
 }
 
 .loading-overlay {
@@ -193,124 +187,16 @@ canvas {
     margin-bottom: 20px;
 }
 
-/* New styles for confidence slider */
-.confidence-filter {
-    background-color: #f8f9fa;
+/* Disclaimer styling */
+.disclaimer {
+    background-color: #fcf8e3;
+    border: 1px solid #faebcc;
+    color: #8a6d3b;
     padding: 15px;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-top: 20px;
     text-align: center;
-}
-
-.confidence-filter label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-#confidenceSlider {
-    width: 80%;
-    height: 15px;
-    margin-bottom: 10px;
-    -webkit-appearance: none;
-    appearance: none;
-    background: linear-gradient(to right, rgb(200, 50, 0), rgb(200, 200, 0), rgb(0, 200, 0));
-    outline: none;
-    border-radius: 10px;
-}
-
-#confidenceSlider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #2c3e50;
-    cursor: pointer;
-}
-
-.confidence-tip {
-    font-size: 0.9em;
-    color: #7f8c8d;
-    margin-top: 10px;
-}
-
-.detection-list {
-    list-style: none;
-    padding: 0;
-}
-
-.detection-list li {
-    background-color: #edf2f7;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    border-left: 4px solid #3498db;
-}
-
-.detection-list li strong {
-    color: #2c3e50;
-}
-
-.no-detections {
-    text-align: center;
-    padding: 30px 0;
-}
-
-.no-detections p {
-    margin-bottom: 10px;
-}
-
-.tip {
-    font-style: italic;
-    color: #7f8c8d;
-}
-
-/* Styles for the confidence legend */
-.legend {
-    margin-top: 30px;
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.legend h3 {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.legend-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 15px;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.color-box {
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-}
-
-.high-confidence {
-    background-color: rgb(0, 200, 0);
-}
-
-.medium-confidence {
-    background-color: rgb(200, 200, 0);
-}
-
-.low-confidence {
-    background-color: rgb(200, 100, 0);
+    font-size: 14px;
 }
 
 @keyframes spin {
@@ -325,9 +211,5 @@ canvas {
     
     .container {
         padding: 15px;
-    }
-
-    #confidenceSlider {
-        width: 95%;
     }
 }

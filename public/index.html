@@ -45,42 +45,16 @@
         <div class="results-container" id="resultsContainer">
             <h2>Detection Results</h2>
             
-            <div class="confidence-filter">
-                <label for="confidenceSlider">Display Confidence Threshold: <span id="confidenceValue">5</span>%</label>
-                <input type="range" id="confidenceSlider" min="1" max="95" value="5" step="1">
-                <div class="confidence-tip">
-                    <p>Lower values show more potential rip currents but may include false detections</p>
-                    <p>Adjust the slider to filter results - values below 15% may detect very subtle rip currents</p>
-                </div>
-            </div>
-            
             <div class="results-content">
                 <div class="result-image-container">
-                    <h3>Detected Image</h3>
                     <canvas id="resultCanvas"></canvas>
-                </div>
-                <div class="result-info">
-                    <h3>Detected Rip Currents</h3>
-                    <div id="detectionInfo"></div>
                 </div>
             </div>
 
-            <div class="legend">
-                <h3>Detection Confidence Legend</h3>
-                <div class="legend-items">
-                    <div class="legend-item">
-                        <div class="color-box high-confidence"></div>
-                        <span>High Confidence (70-100%)</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="color-box medium-confidence"></div>
-                        <span>Medium Confidence (30-70%)</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="color-box low-confidence"></div>
-                        <span>Low Confidence (5-30%)</span>
-                    </div>
-                </div>
+            <div class="disclaimer">
+                <p>SAFETY NOTICE: This tool uses artificial intelligence to detect potential rip currents. 
+                   It may not detect all hazards and should not replace proper beach safety practices. 
+                   Always follow lifeguard instructions and local beach warnings.</p>
             </div>
         </div>
 
